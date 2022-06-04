@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  api-server:
+    image: node/pb-server
+    build: 
+      context: ./server
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    ports:
+      - "8080:8080" # "host:container"
+    networks:
+      - pb-app
+
+  react-app:
+    image: react/pb-client
+    build: 
+      context: ./client
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - api-server:test
+    networks:
+      - pb-app
+
+networks:
+  pb-app:
+    driver: bridge
