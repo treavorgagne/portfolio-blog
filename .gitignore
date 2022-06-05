@@ -1,4 +1,5 @@
 ./*/package-*.json
 server/package-lock.json
 client/package-lock.json
-
+backend/*
+server/*
