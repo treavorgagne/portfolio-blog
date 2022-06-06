@@ -1,27 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
+import Blog from './pages/Blog'
+import Education from './pages/Education'
+import ResponsiveAppBar from './components/Nav.js'
+import SocialDial from './components/Dial.js'
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#05284a',
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <form action="/post" method="post" className="form">
-          <button type="submit">Connected?</button>
-        </form>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <ResponsiveAppBar />
+      <Routes>
+        <Route path="/" element={<About />} />
+      </Routes>
+      <Routes>
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
+      <Routes>
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
+      <Routes>
+        <Route path="/education" element={<Education />} />
+      </Routes>
+      {/* <SocialDial /> */}
+    </ThemeProvider>
   );
 }
 
