@@ -7,13 +7,15 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
+import Education from './pages/Education'
 import ResponsiveAppBar from './components/Nav.js'
+import SocialDial from './components/Dial.js'
 
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#1976d2',
+      main: '#05284a',
     },
   },
 });
@@ -31,6 +33,10 @@ function App() {
       <Routes>
         <Route path="/blog" element={<Blog />} />
       </Routes>
+      <Routes>
+        <Route path="/education" element={<Education />} />
+      </Routes>
+      {/* <SocialDial /> */}
     </ThemeProvider>
   );
 }
