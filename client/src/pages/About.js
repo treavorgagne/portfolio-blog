@@ -7,7 +7,7 @@ import {
   Container,
 } from '@mui/material/';
 import AddIcon from '@mui/icons-material/Add';
-
+import SocialDial from '../components/Dial.js'
 
 export default function About() {
   return (
@@ -21,6 +21,8 @@ export default function About() {
           <AddIcon />
         </Fab>
       </Tooltip>
+    <SocialDial />
     </Container>
+
   )
 }
