@@ -1,21 +1,18 @@
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Routes, Route } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import About from './pages/About'
-import Portfolio from './pages/Portfolio'
-import Blog from './pages/Blog'
-import Education from './pages/Education'
-import ResponsiveAppBar from './components/Nav.js'
-import SocialDial from './components/Dial.js'
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Blog from "./pages/Blog";
+import Education from "./pages/Education";
+import ResponsiveAppBar from "./components/Nav.js";
+import SocialDial from "./components/Dial.js";
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#05284a',
+      main: "#05284a",
     },
   },
 });
