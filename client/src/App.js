@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/education" element={<Education />} />
       </Routes>
-      {/* <SocialDial /> */}
+      
     </ThemeProvider>
   );
 }

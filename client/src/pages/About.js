@@ -19,6 +19,7 @@ export default function About() {
           <AddIcon />
         </Fab>
       </Tooltip>
+      <SocialDial />
     </Container>
   );
 }

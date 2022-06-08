@@ -15,6 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import EngineeringRoundedIcon from "@mui/icons-material/EngineeringRounded";
 import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import { Link as RouterLink } from "react-router-dom";
 // import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 // import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 // import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
@@ -46,10 +47,9 @@ const ResponsiveAppBar = () => {
             sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}
           />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -60,7 +60,12 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            Treavor Gagne
+            <RouterLink
+              to="/"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Treavor Gagne
+            </RouterLink>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -93,14 +98,18 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Button
-                    key={page}
-                    href={page}
-                    sx={{ color: "white", display: "block" }}
+                <MenuItem to={page} key={page} onClick={handleCloseNavMenu}>
+                  <RouterLink
+                    to={page}
+                    style={{ textDecoration: "none", color: "white" }}
                   >
-                    <Typography textAlign="center">{page}</Typography>
-                  </Button>
+                    <Button
+                      key={page}
+                      sx={{ color: "white", display: "block" }}
+                    >
+                      <Typography textAlign="center">{page}</Typography>
+                    </Button>
+                  </RouterLink>
                 </MenuItem>
               ))}
             </Menu>
