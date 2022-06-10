@@ -6,7 +6,6 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Education from "./pages/Education";
 import ResponsiveAppBar from "./components/Nav.js";
-import SocialDial from "./components/Dial.js";
 
 const darkTheme = createTheme({
   palette: {
@@ -33,7 +32,6 @@ function App() {
       <Routes>
         <Route path="/education" element={<Education />} />
       </Routes>
-      
     </ThemeProvider>
   );
 }

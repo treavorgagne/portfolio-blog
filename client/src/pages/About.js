@@ -1,6 +1,7 @@
 import React from "react";
 import { Fab, Typography, TextField, Tooltip, Container } from "@mui/material/";
 import AddIcon from "@mui/icons-material/Add";
+import SocialDial from "../components/Dial.js";
 
 export default function About() {
   return (
