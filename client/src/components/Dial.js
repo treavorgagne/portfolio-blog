@@ -7,8 +7,16 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 const actions = [
-  { icon: <LinkedInIcon />, name: "LinkedIn" },
-  { icon: <GitHubIcon />, name: "Github" },
+  {
+    icon: <LinkedInIcon />,
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/treavorgagne/",
+  },
+  {
+    icon: <GitHubIcon />,
+    name: "Github",
+    href: "https://github.com/treavorgagne/",
+  },
 ];
 
 export default function SocialDial() {
@@ -19,20 +27,15 @@ export default function SocialDial() {
         sx={{ position: "absolute", top: 16, right: 16 }}
         icon={<SpeedDialIcon />}
       >
-        <SpeedDialAction
-          key="LinkedIn"
-          icon={actions[0].icon}
-          tooltipTitle="LinkedIn"
-          href="https://www.linkedin.com/in/treavorgagne/"
-          target="_blank"
-        />
-        <SpeedDialAction
-          key="GitHub"
-          icon={actions[1].icon}
-          tooltipTitle="GitHub"
-          href="https://github.com/treavorgagne/"
-          target="_blank"
-        />
+        {actions.map((action) => (
+          <SpeedDialAction
+            key={action.name}
+            icon={action.icon}
+            tooltipTitle={action.name}
+            href={action.href}
+            target="_blank"
+          />
+        ))}
       </SpeedDial>
     </Box>
   );
