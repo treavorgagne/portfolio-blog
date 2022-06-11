@@ -2,7 +2,6 @@ import React from "react";
 import { Fab, Typography, TextField, Tooltip, Container } from "@mui/material/";
 import AddIcon from "@mui/icons-material/Add";
 import SocialDial from "../components/Dial.js";
-import BlogEditor from "../components/Editor.js";
 
 export default function About() {
   return (
@@ -21,7 +20,6 @@ export default function About() {
           <AddIcon />
         </Fab>
       </Tooltip>
-      <BlogEditor />
       <SocialDial />
     </Container>
   );

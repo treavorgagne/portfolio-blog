@@ -1,31 +1,56 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Editor, EditorState } from "draft-js";
+import { Editor, EditorState, RichUtils } from "draft-js";
+import Divider from "@mui/material/Divider";
+import Container from "@mui/material/Container";
 
-const BlogEditor = (props) => {
-  const [editorState, setEditorState] = React.useState(
-    EditorState.createEmpty()
-  );
-
-  const editor = React.useRef(null);
-
-  function focusEditor() {
-    editor.current.focus();
+class MyEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
+    this.onChange = (editorState) => this.setState({ editorState });
+    this.setEditor = (editor) => {
+      this.editor = editor;
+    };
+    this.focusEditor = () => {
+      if (this.editor) {
+        this.editor.focus();
+      }
+    };
   }
 
-  React.useEffect(() => {
-    focusEditor();
-  }, []);
+  _onBoldClick() {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
+  }
 
-  return (
-    <div onClick={focusEditor}>
-      <Editor
-        ref={editor}
-        editorState={editorState}
-        onChange={(editorState) => setEditorState(editorState)}
-      />
-    </div>
-  );
+  componentDidMount() {
+    this.focusEditor();
+  }
+
+  render() {
+    return (
+      <Container>
+        <div style={styles.editor} onClick={this.focusEditor}>
+          <Container sx={{ p: 1 }}>
+            <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+          </Container>
+          <Divider sx={{ bgcolor: "black", m: 1 }} />
+          <Editor
+            ref={this.setEditor}
+            editorState={this.state.editorState}
+            onChange={this.onChange}
+          />
+        </div>
+      </Container>
+    );
+  }
+}
+
+const styles = {
+  editor: {
+    border: "1px solid black",
+    minHeight: "6em",
+    background: "white",
+  },
 };
 
-export default BlogEditor;
+export default MyEditor;
