@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Education from "./pages/Education";
+import AddBlog from "./pages/AddBlog";
 import ResponsiveAppBar from "./components/Nav.js";
 
 const darkTheme = createTheme({
@@ -31,6 +32,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/education" element={<Education />} />
+      </Routes>
+      <Routes>
+        <Route path="/addBlog" element={<AddBlog />} />
       </Routes>
     </ThemeProvider>
   );
