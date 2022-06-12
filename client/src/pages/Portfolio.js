@@ -3,7 +3,7 @@ import { Typography, Container } from "@mui/material/";
 
 export default function Portfolio() {
   return (
-    <Container sx={{ bgcolor: "#0c53a6", p: 2 }} maxWidth="lg">
+    <Container sx={{ bgcolor: "#8C97A9", p: 2, height: "100vh" }} maxWidth="lg">
       <Typography variant="h2" component="div" gutterBottom>
         Portfolio Page
       </Typography>

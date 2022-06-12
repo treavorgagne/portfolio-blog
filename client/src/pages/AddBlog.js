@@ -1,9 +1,11 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
 import BlogEditor from "../components/Editor.js";
+import SendIcon from "@mui/icons-material/Send";
 
 export default function Blog() {
   return (
@@ -18,6 +20,7 @@ export default function Blog() {
         will be notified via email to review and approve your post. All blogs
         are stored in a mongoDB database hosted on AWS.
       </Typography>
+
       <Divider sx={{ bgcolor: "black" }} gutterBottom />
 
       <TextField
@@ -25,18 +28,19 @@ export default function Blog() {
         id="outlined-basic"
         label="Title"
         variant="outlined"
-        sx={{ m: 2, width: "50vh" }}
+        sx={{ my: 2, mr: 3, width: "45vw" }}
       />
-
       <TextField
         color="primary"
         id="outlined-basic"
         label="Name (Optional)"
         variant="outlined"
-        sx={{ m: 2, width: "50vh" }}
+        sx={{ my: 2, width: "25vw" }}
       />
-
       <BlogEditor />
+      <Button sx={{ mt: 2 }} variant="contained" endIcon={<SendIcon />}>
+        Send
+      </Button>
     </Container>
   );
 }

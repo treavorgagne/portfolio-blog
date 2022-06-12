@@ -8,49 +8,46 @@ class MyEditor extends React.Component {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
     this.onChange = (editorState) => this.setState({ editorState });
-    this.setEditor = (editor) => {
-      this.editor = editor;
-    };
-    this.focusEditor = () => {
-      if (this.editor) {
-        this.editor.focus();
-      }
-    };
+    this.handleKeyCommand = this.handleKeyCommand.bind(this);
+  }
+
+  handleKeyCommand(command, editorState) {
+    const newState = RichUtils.handleKeyCommand(editorState, command);
+
+    if (newState) {
+      this.onChange(newState);
+      return "handled";
+    }
+
+    return "not-handled";
   }
 
   _onBoldClick() {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
   }
 
-  componentDidMount() {
-    this.focusEditor();
-  }
-
   render() {
     return (
-      <Container>
-        <div style={styles.editor} onClick={this.focusEditor}>
-          <Container sx={{ p: 1 }}>
-            <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-          </Container>
-          <Divider sx={{ bgcolor: "black", m: 1 }} />
-          <Editor
-            ref={this.setEditor}
-            editorState={this.state.editorState}
-            onChange={this.onChange}
-          />
-        </div>
+      <Container
+        sx={{
+          border: "1px solid black",
+          minHeight: "15em",
+          background: "white",
+          borderRadius: "5px",
+          mr: 3,
+          py: 1,
+        }}
+      >
+        <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+        <Divider sx={{ bgcolor: "black", my: 1 }} />
+        <Editor
+          editorState={this.state.editorState}
+          handleKeyCommand={this.handleKeyCommand}
+          onChange={this.onChange}
+        />
       </Container>
     );
   }
 }
-
-const styles = {
-  editor: {
-    border: "1px solid black",
-    minHeight: "6em",
-    background: "white",
-  },
-};
 
 export default MyEditor;
