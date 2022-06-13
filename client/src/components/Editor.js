@@ -2,6 +2,40 @@ import React from "react";
 import { Editor, EditorState, RichUtils } from "draft-js";
 import Divider from "@mui/material/Divider";
 import Container from "@mui/material/Container";
+import Immutable from "immutable";
+
+const blockRenderMap = Immutable.Map({
+  "header-one": {
+    element: "h1",
+  },
+  "header-two": {
+    element: "h2",
+  },
+  "header-three": {
+    element: "h3",
+  },
+  "header-four": {
+    element: "h4",
+  },
+  "header-five": {
+    element: "h5",
+  },
+  "header-six": {
+    element: "h6",
+  },
+  blockquote: {
+    element: "blockquote",
+  },
+  "code-block": {
+    element: "code-block",
+  },
+  atomic: {
+    element: "figure",
+  },
+  unstyled: {
+    element: "p",
+  },
+});
 
 class MyEditor extends React.Component {
   constructor(props) {
@@ -26,6 +60,22 @@ class MyEditor extends React.Component {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
   }
 
+  _onItalicClick() {
+    this.onChange(
+      RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC")
+    );
+  }
+
+  _onUnderlineClick() {
+    this.onChange(
+      RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE")
+    );
+  }
+
+  _onCodeClick() {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "CODE"));
+  }
+
   render() {
     return (
       <Container
@@ -39,11 +89,15 @@ class MyEditor extends React.Component {
         }}
       >
         <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+        <button onClick={this._onItalicClick.bind(this)}>Italic</button>
+        <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
+        <button onClick={this._onCodeClick.bind(this)}>Code</button>
         <Divider sx={{ bgcolor: "black", my: 1 }} />
         <Editor
           editorState={this.state.editorState}
           handleKeyCommand={this.handleKeyCommand}
           onChange={this.onChange}
+          blockRenderMap={blockRenderMap}
         />
       </Container>
     );
