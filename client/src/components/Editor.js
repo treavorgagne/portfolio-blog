@@ -2,6 +2,7 @@ import React from "react";
 import { Editor, EditorState, RichUtils } from "draft-js";
 import Divider from "@mui/material/Divider";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import Immutable from "immutable";
 
 const blockRenderMap = Immutable.Map({
@@ -88,10 +89,10 @@ class MyEditor extends React.Component {
           py: 1,
         }}
       >
-        <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-        <button onClick={this._onItalicClick.bind(this)}>Italic</button>
-        <button onClick={this._onUnderlineClick.bind(this)}>Underline</button>
-        <button onClick={this._onCodeClick.bind(this)}>Code</button>
+        <Button onClick={this._onBoldClick.bind(this)}>Bold</Button>
+        <Button onClick={this._onItalicClick.bind(this)}>Italic</Button>
+        <Button onClick={this._onUnderlineClick.bind(this)}>Underline</Button>
+        <Button onClick={this._onCodeClick.bind(this)}>Code</Button>
         <Divider sx={{ bgcolor: "black", my: 1 }} />
         <Editor
           editorState={this.state.editorState}
