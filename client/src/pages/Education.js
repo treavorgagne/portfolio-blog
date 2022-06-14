@@ -1,12 +1,21 @@
 import React from "react";
-import { Typography, Container } from "@mui/material/";
+import { Typography, Container, Box } from "@mui/material/";
+import SocialDial from "../components/Dial.js";
 
 export default function Education() {
   return (
-    <Container sx={{ bgcolor: "#8C97A9", p: 2, height: "100vh" }} maxWidth="lg">
-      <Typography variant="h2" component="div" gutterBottom>
-        Education Page
-      </Typography>
+    <Container sx={{ p: 2 }} maxWidth="lg">
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Typography variant="h3" component="div" gutterBottom>
+          Education
+        </Typography>
+        <SocialDial />
+      </Box>
     </Container>
   );
 }

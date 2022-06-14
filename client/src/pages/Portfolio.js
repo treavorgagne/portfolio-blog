@@ -4,9 +4,11 @@ import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import Accordion from "@mui/material/Accordion";
 import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SocialDial from "../components/Dial.js";
 
 export default function Portfolio() {
   const [expanded, setExpanded] = React.useState(false);
@@ -16,10 +18,18 @@ export default function Portfolio() {
   };
 
   return (
-    <Container sx={{ p: 2, height: "100vh" }} maxWidth="lg">
-      <Typography variant="h3" component="div" gutterBottom>
-        Portfolio
-      </Typography>
+    <Container sx={{ p: 2 }} maxWidth="lg">
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Typography variant="h3" component="div" gutterBottom>
+          Portfolio
+        </Typography>
+        <SocialDial />
+      </Box>
       <Typography variant="h5" gutterBottom>
         Here is a list of projects I have completed. If you wish to take a
         closer look at any of these projects please see my{" "}
@@ -44,7 +54,7 @@ export default function Portfolio() {
           aria-controls="dayTradingbh-content"
           id="dayTradingbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             Scalability Day Trading Project
           </Typography>
         </AccordionSummary>
@@ -74,7 +84,7 @@ export default function Portfolio() {
           aria-controls="redisbh-content"
           id="redisbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             Redis Bookstore Cache
           </Typography>
         </AccordionSummary>
@@ -100,7 +110,7 @@ export default function Portfolio() {
           aria-controls="lpbh-content"
           id="lpbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             Linear Programming Solver
           </Typography>
         </AccordionSummary>
@@ -127,7 +137,7 @@ export default function Portfolio() {
           aria-controls="sqlbh-content"
           id="sqlbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             ACID Complient SQL Airport Database
           </Typography>
         </AccordionSummary>
@@ -154,7 +164,7 @@ export default function Portfolio() {
           aria-controls="blogbh-content"
           id="blogbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             Portfolio and Blog Website
           </Typography>
         </AccordionSummary>
@@ -181,7 +191,7 @@ export default function Portfolio() {
           aria-controls="TDRbh-content"
           id="TDRbh-header"
         >
-          <Typography variant="h4" sx={{ flexShrink: 0 }}>
+          <Typography variant="h4" sx={{ flexShrink: 1 }}>
             Top Down Royal (TDR)
           </Typography>
         </AccordionSummary>

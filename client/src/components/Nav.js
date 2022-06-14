@@ -8,18 +8,11 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import Link from "@mui/material/Link";
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
 import EngineeringRoundedIcon from "@mui/icons-material/EngineeringRounded";
 import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import { Link as RouterLink } from "react-router-dom";
-// import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-// import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-// import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-// import EditRoundedIcon from '@mui/icons-material/EditRounded';
 
 const pages = ["Portfolio", "Blog", "Education"];
 const ResponsiveAppBar = () => {
