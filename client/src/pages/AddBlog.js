@@ -6,13 +6,23 @@ import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
 import BlogEditor from "../components/Editor.js";
 import SendIcon from "@mui/icons-material/Send";
+import Box from "@mui/material/Box";
+import SocialDial from "../components/Dial.js";
 
 export default function Blog() {
   return (
     <Container sx={{ p: 2 }} maxWidth="lg">
-      <Typography variant="h3" component="div" gutterBottom>
-        Add Blog Post
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
+        <Typography variant="h3" component="div" gutterBottom>
+          Add Blog Post
+        </Typography>
+        <SocialDial />
+      </Box>
       <Typography variant="h5" gutterBottom>
         To add a blog entry please complete and submit the title, blog, and
         optional name field. Write about anything you wish to share. All

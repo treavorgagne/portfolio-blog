@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Container, Box } from "@mui/material/";
 import SocialDial from "../components/Dial.js";
 
+// this data will be stored in the mangoDB database
 const entries = [
   {
     title: "TITLE TEST 1",

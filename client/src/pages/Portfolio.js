@@ -10,6 +10,51 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SocialDial from "../components/Dial.js";
 
+const projects = [
+  {
+    id: "website",
+    name: "Portfolio and Blog Website",
+    stack: "React.js, Express Node.js, MongoDB, Docker, AWS",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
+    id: "redis",
+    name: "Redis Bookstore Cache",
+    stack: "Express Node.js, Redis Cache, Docker",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
+    id: "trading",
+    name: "Scalability Day Trading Project",
+    stack: "React.js, Express Node.js, PostgreSQL, AWS, Docker",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
+    id: "lp",
+    name: "Linear Programming Solver",
+    stack: "Python",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
+    id: "tdr",
+    name: "Top Down Royal (TDR)",
+    stack: "C++, TCP",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
+    id: "sql",
+    name: "ACID Complient SQL Airport Database",
+    stack: "PostgreSQL, Python",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+];
+
 export default function Portfolio() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,175 +87,30 @@ export default function Portfolio() {
         </Link>
         .
       </Typography>
-
       <Divider sx={{ bgcolor: "black", my: 2 }} />
 
-      <Accordion
-        expanded={expanded === "dayTrading"}
-        onChange={handleChange("dayTrading")}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="dayTradingbh-content"
-          id="dayTradingbh-header"
+      {projects.map((project) => (
+        <Accordion
+          expanded={expanded === project.id}
+          onChange={handleChange(project.id)}
         >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            Scalability Day Trading Project
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: React.js, Express Node.js, PostgreSQL, AWS, Docker
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum. Qui ullamco veniam sunt ullamco laboris Lorem.
-            Aute reprehenderit minim aliquip ut consectetur est.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion
-        expanded={expanded === "redis"}
-        onChange={handleChange("redis")}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="redisbh-content"
-          id="redisbh-header"
-        >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            Redis Bookstore Cache
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: Express Node.js, Redis Cache, Docker
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === "lp"} onChange={handleChange("lp")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="lpbh-content"
-          id="lpbh-header"
-        >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            Linear Programming Solver
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: Python
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum. Qui ullamco veniam sunt ullamco laboris Lorem.
-            Aute reprehenderit minim aliquip ut consectetur est.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === "sql"} onChange={handleChange("sql")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="sqlbh-content"
-          id="sqlbh-header"
-        >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            ACID Complient SQL Airport Database
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: PostgreSQL, Python
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum. Qui ullamco veniam sunt ullamco laboris Lorem.
-            Aute reprehenderit minim aliquip ut consectetur est.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === "blog"} onChange={handleChange("blog")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="blogbh-content"
-          id="blogbh-header"
-        >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            Portfolio and Blog Website
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: React.js, Express Node.js, MongoDB, Docker, AWS
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum. Qui ullamco veniam sunt ullamco laboris Lorem.
-            Aute reprehenderit minim aliquip ut consectetur est.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion expanded={expanded === "TDR"} onChange={handleChange("TDR")}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="TDRbh-content"
-          id="TDRbh-header"
-        >
-          <Typography variant="h4" sx={{ flexShrink: 1 }}>
-            Top Down Royal (TDR)
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography variant="h6" sx={{ color: "text.secondary" }}>
-            Tech Stack: C++, TCP
-          </Typography>
-          <Typography>
-            Eiusmod voluptate et voluptate sint. Ut exercitation laboris aliqua
-            veniam. Sint ullamco deserunt ad dolor aliqua esse pariatur eu et
-            ipsum eiusmod deserunt.Reprehenderit aute elit veniam fugiat
-            excepteur. Laborum nostrud tempor consequat qui irure velit in esse
-            qui. Excepteur do ut nulla magna. Elit culpa nulla labore veniam
-            laborum consequat officia. Elit ipsum aute labore nisi amet sint eu
-            qui cillum ipsum. Qui ullamco veniam sunt ullamco laboris Lorem.
-            Aute reprehenderit minim aliquip ut consectetur est.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={project.id + "bh-content"}
+            id={project.id + "bh-header"}
+          >
+            <Typography variant="h4" sx={{ flexShrink: 1 }}>
+              {project.name}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography variant="h6" sx={{ color: "text.secondary" }}>
+              Tech Stack: {project.stack}
+            </Typography>
+            <Typography>{project.content}</Typography>
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </Container>
   );
 }
