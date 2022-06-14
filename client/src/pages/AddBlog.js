@@ -9,8 +9,8 @@ import SendIcon from "@mui/icons-material/Send";
 
 export default function Blog() {
   return (
-    <Container sx={{ bgcolor: "#8C97A9", p: 2, height: "100vh" }} maxWidth="lg">
-      <Typography variant="h2" component="div" gutterBottom>
+    <Container sx={{ p: 2 }} maxWidth="lg">
+      <Typography variant="h3" component="div" gutterBottom>
         Add Blog Post
       </Typography>
       <Typography variant="h5" gutterBottom>
