@@ -10,6 +10,16 @@ import Box from "@mui/material/Box";
 import SocialDial from "../components/Dial.js";
 
 export default function Blog() {
+  const handler = () => {
+    console.log("TEST Start");
+    const requestOptions = {
+      method: "GET",
+    };
+    fetch("http://localhost:8080/download", requestOptions).then((response) =>
+      console.log(response).then(console.log("TEST END"))
+    );
+  };
+
   return (
     <Container sx={{ p: 2 }} maxWidth="lg">
       <Box
@@ -31,7 +41,7 @@ export default function Blog() {
         are stored in a mongoDB database hosted on AWS.
       </Typography>
 
-      <Divider sx={{ bgcolor: "black" }} gutterBottom />
+      <Divider sx={{ bgcolor: "black" }} />
 
       <TextField
         color="primary"
@@ -48,7 +58,13 @@ export default function Blog() {
         sx={{ my: 2, width: "25vw" }}
       />
       <BlogEditor />
-      <Button sx={{ mt: 2 }} variant="contained" endIcon={<SendIcon />}>
+      <Button
+        sx={{ mt: 2 }}
+        variant="contained"
+        endIcon={<SendIcon />}
+        onClick={handler}
+        download
+      >
         Send
       </Button>
     </Container>
