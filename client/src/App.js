@@ -23,18 +23,10 @@ function App() {
       <ResponsiveAppBar />
       <Routes>
         <Route path="/" element={<About />} />
-      </Routes>
-      <Routes>
-        <Route path="/portfolio" element={<Portfolio />} />
-      </Routes>
-      <Routes>
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
-      <Routes>
-        <Route path="/education" element={<Education />} />
-      </Routes>
-      <Routes>
-        <Route path="/addBlog" element={<AddBlog />} />
+        <Route path="/Portfolio" element={<Portfolio />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/Education" element={<Education />} />
+        <Route path="/AddBlog" element={<AddBlog />} />
       </Routes>
     </ThemeProvider>
   );
