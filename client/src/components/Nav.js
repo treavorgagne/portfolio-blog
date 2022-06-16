@@ -8,18 +8,11 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import Link from "@mui/material/Link";
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from "@mui/material/MenuItem";
 import EngineeringRoundedIcon from "@mui/icons-material/EngineeringRounded";
 import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import { Link as RouterLink } from "react-router-dom";
-// import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-// import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-// import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-// import EditRoundedIcon from '@mui/icons-material/EditRounded';
 
 const pages = ["Portfolio", "Blog", "Education"];
 const ResponsiveAppBar = () => {
@@ -49,7 +42,6 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -127,7 +119,6 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
             href="/"
             sx={{
               mr: 2,
@@ -144,14 +135,18 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                href={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+              <RouterLink
+                to={page}
+                style={{ textDecoration: "none", color: "white" }}
               >
-                {page}
-              </Button>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </RouterLink>
             ))}
           </Box>
         </Toolbar>
