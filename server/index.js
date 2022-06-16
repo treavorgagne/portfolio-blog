@@ -9,9 +9,8 @@ app.post("/post", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/download", (req, res) => {
-  const file = `${__dirname}/test.txt`;
-  console.log("test");
+app.get("/resume", (req, res) => {
+  const file = `${__dirname}/resume.pdf`;
   res.download(file);
 });
 

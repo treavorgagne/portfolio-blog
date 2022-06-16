@@ -1,6 +1,8 @@
-import React from "react";
-import { Typography, Container, Box } from "@mui/material/";
+import React from "react"
+import { Typography, Container, Box, Button } from "@mui/material/";
+import DownloadIcon from "@mui/icons-material/Download";
 import SocialDial from "../components/Dial.js";
+import Resume from "../components/Resume.js";
 
 export default function About() {
   return (
@@ -16,6 +18,14 @@ export default function About() {
         </Typography>
         <SocialDial />
       </Box>
+      <Button
+        sx={{ mt: 2 }}
+        variant="contained"
+        endIcon={<DownloadIcon />}
+        onClick={Resume}
+      >
+        Download
+      </Button>
     </Container>
   );
 }
