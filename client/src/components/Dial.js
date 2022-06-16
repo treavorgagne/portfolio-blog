@@ -6,6 +6,8 @@ import SpeedDialAction from "@mui/material/SpeedDialAction";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CreateIcon from "@mui/icons-material/CreateRounded";
+import DownloadIcon from "@mui/icons-material/Download";
+import Resume from "../components/Resume.js";
 
 const actions = [
   {
@@ -13,18 +15,28 @@ const actions = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/treavorgagne/",
     target: "_blank",
+    onClick: "",
   },
   {
     icon: <GitHubIcon />,
     name: "Github",
     href: "https://github.com/treavorgagne/",
     target: "_blank",
+    onClick: "",
   },
   {
     icon: <CreateIcon />,
     name: "Add Blog",
     href: "http://localhost:3000/AddBlog",
     target: "",
+    onClick: "",
+  },
+  {
+    icon: <DownloadIcon />,
+    name: "Resume",
+    href: "",
+    target: "",
+    onClick: Resume,
   },
 ];
 
@@ -44,6 +56,7 @@ export default function SocialDial() {
             tooltipTitle={action.name}
             href={action.href}
             target={action.target}
+            onClick={action.onClick}
           />
         ))}
       </SpeedDial>

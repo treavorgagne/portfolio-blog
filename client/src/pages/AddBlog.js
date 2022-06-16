@@ -4,22 +4,12 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import TextField from "@mui/material/TextField";
-import BlogEditor from "../components/Editor.js";
 import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
 import SocialDial from "../components/Dial.js";
+import BlogEditor from "../components/Editor.js";
 
 export default function Blog() {
-  const handler = () => {
-    console.log("TEST Start");
-    const requestOptions = {
-      method: "GET",
-    };
-    fetch("http://localhost:8080/download", requestOptions).then((response) =>
-      console.log(response).then(console.log("TEST END"))
-    );
-  };
-
   return (
     <Container sx={{ p: 2 }} maxWidth="lg">
       <Box
@@ -58,13 +48,7 @@ export default function Blog() {
         sx={{ my: 2, width: "25vw" }}
       />
       <BlogEditor />
-      <Button
-        sx={{ mt: 2 }}
-        variant="contained"
-        endIcon={<SendIcon />}
-        onClick={handler}
-        download
-      >
+      <Button sx={{ mt: 2 }} variant="contained" endIcon={<SendIcon />}>
         Send
       </Button>
     </Container>
