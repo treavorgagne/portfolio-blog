@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Typography, Container, Box, Button } from "@mui/material/";
 import DownloadIcon from "@mui/icons-material/Download";
 import SocialDial from "../components/Dial.js";
