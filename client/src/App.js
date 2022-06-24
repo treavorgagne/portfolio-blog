@@ -4,7 +4,6 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
-import Education from "./pages/Education";
 import AddBlog from "./pages/AddBlog";
 import ResponsiveAppBar from "./components/Nav.js";
 
@@ -25,7 +24,6 @@ function App() {
         <Route path="/" element={<About />} />
         <Route path="/Portfolio" element={<Portfolio />} />
         <Route path="/Blog" element={<Blog />} />
-        <Route path="/Education" element={<Education />} />
         <Route path="/AddBlog" element={<AddBlog />} />
       </Routes>
     </ThemeProvider>

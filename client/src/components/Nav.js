@@ -14,7 +14,7 @@ import CreateRoundedIcon from "@mui/icons-material/CreateRounded";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import { Link as RouterLink } from "react-router-dom";
 
-const pages = ["Portfolio", "Blog", "Education"];
+const pages = ["Portfolio", "Blog"];
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
