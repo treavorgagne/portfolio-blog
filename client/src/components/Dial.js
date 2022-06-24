@@ -7,8 +7,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CreateIcon from "@mui/icons-material/CreateRounded";
 import DownloadIcon from "@mui/icons-material/Download";
+import EmailIcon from "@mui/icons-material/Email";
 import Resume from "../components/Resume.js";
-
+import Email from "../components/Email.js";
 
 const actions = [
   {
@@ -16,21 +17,21 @@ const actions = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/treavorgagne/",
     target: "_blank",
-    onClick: "",
+    onClick: null,
   },
   {
     icon: <GitHubIcon />,
     name: "Github",
     href: "https://github.com/treavorgagne/",
     target: "_blank",
-    onClick: "",
+    onClick: null,
   },
   {
     icon: <CreateIcon />,
     name: "Add Blog",
     href: "http://localhost:3000/AddBlog",
     target: "",
-    onClick: "",
+    onClick: null,
   },
   {
     icon: <DownloadIcon />,
@@ -38,6 +39,13 @@ const actions = [
     href: "",
     target: "",
     onClick: Resume,
+  },
+  {
+    icon: <EmailIcon />,
+    name: "Contact Me",
+    href: "",
+    target: "",
+    onClick: Email,
   },
 ];
 
