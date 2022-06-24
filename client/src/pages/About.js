@@ -8,6 +8,8 @@ import Email from "../components/Email.js";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import Contact from "../components/Contact.js";
+import Experience from "../components/Experience.js";
 
 export default function About() {
   return (
@@ -32,47 +34,28 @@ export default function About() {
           gridTemplateAreas: `"sidebar sidebar main main main main main"`,
         }}
       >
-        <Box sx={{ gridArea: "sidebar", textAlign: "center" }}>
-          <img
-            src="../headshot.png"
-            alt="headshot"
-            loading="lazy"
-            width="100%"
-          ></img>
-          <Typography variant="h6" component="div" gutterBottom>
-            My Resume:
-          </Typography>
-          <IconButton
-            color="primary"
-            aria-label="download resume"
-            component="span"
-            variant="contained"
-            onClick={Resume}
-          >
-            <Tooltip title="Download Resume">
-              <DownloadIcon />
-            </Tooltip>
-          </IconButton>
-          <Typography variant="h6" component="div" gutterBottom>
-            Contact me:
-          </Typography>
-          <IconButton
-            color="primary"
-            aria-label="contact me"
-            component="span"
-            variant="contained"
-            onClick={Email}
-          >
-            <Tooltip title="Contact Me">
-              <EmailIcon />
-            </Tooltip>
-          </IconButton>
+        <Box sx={{ gridArea: "sidebar" }}>
+          <Box sx={{ textAlign: "center" }}>
+            <img
+              src="../headshot.png"
+              alt="headshot"
+              loading="lazy"
+              width="100%"
+            ></img>
+            <Typography variant="h5" component="p" gutterBottom>
+              Contact Info
+            </Typography>
+          </Box>
+          <Contact />
         </Box>
         <Box sx={{ gridArea: "main" }}>
           <Typography variant="h5" component="p" gutterBottom>
-            Hey what's up, I'm Treavor Gagne (he/his/him). Here is a little bit
-            about me. Currently, I am in my last semester of the Bachelor of
-            Software Engineering (BSEng) Program at the University of Victoria.
+            Hey what's up, I'm Treavor Gagne (he/his/him).
+          </Typography>
+          <Typography variant="h5" component="p" gutterBottom>
+            Welcome to my portfolio and blog website. Here's a little bit about
+            me. Currently, I am in my last semester of the Bachelor of Software
+            Engineering (BSEng) Program at the University of Victoria.
             Currently, I am searching for post graduation software engineering
             positions.
           </Typography>
@@ -80,10 +63,7 @@ export default function About() {
           <Typography variant="h4" component="p" gutterBottom>
             Work Experience
           </Typography>
-
-          {/* <Typography variant="h4" component="p" gutterBottom>
-            Education
-          </Typography> */}
+          <Experience />
         </Box>
       </Box>
     </Container>

@@ -12,6 +12,13 @@ import SocialDial from "../components/Dial.js";
 
 const projects = [
   {
+    id: "capstone",
+    name: "Course Scheduling Capstone Project",
+    stack: "Golang, Python, Docker",
+    content:
+      "Ex velit in pariatur magna eiusmod sit enim sunt fugiat aliquip voluptate velit esse. Labore eiusmod deserunt do reprehenderit aliqua cillum laboris id anim excepteur duis aliquip ea. Quis reprehenderit et nulla eiusmod sint eu id ea excepteur ullamco fugiat deserunt eu.",
+  },
+  {
     id: "website",
     name: "Portfolio and Blog Website",
     stack: "React.js, Express Node.js, MongoDB, Docker, AWS",
