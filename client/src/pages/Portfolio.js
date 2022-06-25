@@ -96,28 +96,30 @@ export default function Portfolio() {
       </Typography>
       <Divider sx={{ bgcolor: "black", my: 2 }} />
 
-      {projects.map((project) => (
-        <Accordion
-          expanded={expanded === project.id}
-          onChange={handleChange(project.id)}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={project.id + "bh-content"}
-            id={project.id + "bh-header"}
+      <div>
+        {projects.map((project) => (
+          <Accordion
+            expanded={expanded === project.id}
+            onChange={handleChange(project.id)}
           >
-            <Typography variant="h4" sx={{ flexShrink: 1 }}>
-              {project.name}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography variant="h6" sx={{ color: "text.secondary" }}>
-              Tech Stack: {project.stack}
-            </Typography>
-            <Typography>{project.content}</Typography>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={project.id + "bh-content"}
+              id={project.id + "bh-header"}
+            >
+              <Typography variant="h4" sx={{ flexShrink: 1 }}>
+                {project.name}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant="h6" sx={{ color: "text.secondary" }}>
+                Tech Stack: {project.stack}
+              </Typography>
+              <Typography>{project.content}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </div>
     </Container>
   );
 }

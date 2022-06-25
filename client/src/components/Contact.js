@@ -50,6 +50,7 @@ export default function Contact() {
             href={info.href}
             onClick={info.onClick}
             size="large"
+            sx={{ border: 1 }}
           >
             <Tooltip title={info.name} fontSize="24pt">
               {info.icon}

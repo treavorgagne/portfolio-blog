@@ -1,15 +1,14 @@
 import React from "react";
-import { Typography, Container, Box, Button } from "@mui/material/";
-import DownloadIcon from "@mui/icons-material/Download";
-import EmailIcon from "@mui/icons-material/Email";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 import SocialDial from "../components/Dial.js";
-import Resume from "../components/Resume.js";
-import Email from "../components/Email.js";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import Contact from "../components/Contact.js";
 import Experience from "../components/Experience.js";
+import Email from "../components/Email.js";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function About() {
   return (
@@ -50,16 +49,52 @@ export default function About() {
         </Box>
         <Box sx={{ gridArea: "main" }}>
           <Typography variant="h5" component="p" gutterBottom>
-            Hey what's up, I'm Treavor Gagne (he/his/him).
+            Hey what's up,{" "}
+            {/* </Typography>
+          <Typography variant="h5" component="p" gutterBottom> */}
+            I'm Treavor Gagne (he/his/him) and welcome to my portfolio and blog
+            website.
           </Typography>
+
           <Typography variant="h5" component="p" gutterBottom>
-            Welcome to my portfolio and blog website. Here's a little bit about
-            me. Currently, I am in my last semester of the Bachelor of Software
-            Engineering (BSEng) Program at the University of Victoria.
-            Currently, I am searching for post graduation software engineering
-            positions.
+            Currently, I'm in my last semester of school at the University of
+            Victoria in the Bachelor of Software Engineering (BSEng) program.
+            While at UVic, I have gained over 2+ years of software development
+            experience between projects and coops. In that time, I have learned
+            to code using multiple programming languages like Golang for my
+            Software Engineering{" "}
+            <RouterLink to="/Portfolio" style={{ textDecoration: "none" }}>
+              <Link href="#" underline="hover">
+                {" "}
+                Capstone Project
+              </Link>
+            </RouterLink>
+            . Aside from programming languages, I have gained experience
+            developing using agile methodologies and practices, such as scrums
+            meetings, development sprints, and retros among others. Overall, I
+            am a well rounded software engineer with a multitude of varying
+            experiences which are detailed below.
           </Typography>
+
+          <Typography variant="h5" component="p" gutterBottom>
+            I'm also looking for post graduation software engineering positions,
+            so feel free to get in touch with me via{" "}
+            <Link
+              href="https://www.linkedin.com/in/treavorgagne/"
+              underline="hover"
+              target="_blank"
+            >
+              LinkedIn
+            </Link>{" "}
+            or{" "}
+            <Link underline="hover" href="#" onClick={Email}>
+              Email
+            </Link>{" "}
+            regarding possible job openings.
+          </Typography>
+
           <Divider sx={{ bgcolor: "black", my: 2 }} />
+
           <Typography variant="h4" component="p" gutterBottom>
             Work Experience
           </Typography>
