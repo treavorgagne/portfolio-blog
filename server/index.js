@@ -10,7 +10,7 @@ app.post("/post", (req, res) => {
 });
 
 app.get("/resume", (req, res) => {
-  const file = `${__dirname}/resume.pdf`;
+  const file = `${__dirname}/Treavor Gagne - Resume.pdf`;
   res.download(file);
 });
 
